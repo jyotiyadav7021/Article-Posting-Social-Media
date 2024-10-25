@@ -21,7 +21,7 @@ const postListReducer = (currPostList, action) => {
 const PostListProvider = ({ children }) => {
   const [postList, dispatchPostList] = useReducer(
     postListReducer,
-    DEFAULT_POST_LIST
+    []
   );
 
   const addPost = (userId, postTitle, postBody, reactions, tags) => {
@@ -54,23 +54,6 @@ const PostListProvider = ({ children }) => {
   );
 };
 
-const DEFAULT_POST_LIST = [
-  {
-    id: "1",
-    title: "Yeah we won the match",
-    body: "huraaahhhhh guys we won the match thanx to our captain and the GOAT virat and team",
-    reactions: 2,
-    userId: "user-9",
-    tags: ["cricket", "Mumbai", "Enjoying"],
-  },
-  {
-    id: "2",
-    title: "Elections are comming",
-    body: "Excited to see kiski sarkaar banegi.",
-    reactions: 15,
-    userId: "user-12",
-    tags: ["Election", "India"],
-  },
-];
+
 
 export default PostListProvider;
